@@ -1,26 +1,64 @@
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    entry: {
-        app: './src/index.js',
-    },
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist',
-        hot: true,
-    },
-    plugins: [
-        new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-        new HtmlWebpackPlugin({
-            title: 'Output Management',
-        }),
-    ],
+    entry: './src/js/app.js',
     output: {
-        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
+        filename: 'bundle.js',
+        // publicPath: '/src'
     },
-};
+    module:{
+        rules:[
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions:{
+                                indentWidth: 4,
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: ['html-loader'] 
+            },
+            {
+                test: /\.(jpg|png)$/,
+                use:[
+                    {
+                        loader: 'file-loader',
+                        options:{
+                            name: '[name].[ext]',
+                            outputPath: 'img/',
+                            publicPath: 'img/'
+                        }
+                    }
+                ]
+            }
+
+        ]
+    },
+    optimization:{
+            minimizer: [new UglifyJsPlugin()],
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html'
+        }),
+        new MiniCssExtractPlugin()
+    ], 
+}
