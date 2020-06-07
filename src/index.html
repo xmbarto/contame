@@ -3,22 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+  src="https://code.jquery.com/jquery-3.1.0.js"
+  integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
+  crossorigin="anonymous">
+</script>
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h1>Aprendiendo Webpack</h1>
-        <ul>
-            <li>Maxi</li>
-            <li>Barto</li>
-            <li>Lozzi</li>
-        </ul>
+    <div class="bg-gray-100 h-screen">
+        <nav class="flex flex-wrap items-center justify-between bg-isaac-dark h-auto p-6">
+            <div class="mr-8">
+                <a class="inline-block" href="#">
+                    <img class="" src="./img/isaac-logo.png" alt="logo">
+                </a>
+                <span class="font-wserif text-white text-4xl pl-1 pb-1">Isaac</span>
+            </div>
+            <div class="burger-menu lg:hidden">
+                <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-gray-100 hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button>
+
+            </div>
+            <ul class="mobile-menu w-full flex-grow lg:flex lg;items-center lg:w-auto hidden">
+                <li class="py-3 pt-5">
+                    <a class="font-wsans text-gray-500 hover:text-white transition duration-200 px-5" href="#">Why Smarter?</a>
+                </li>
+                <li class="py-3">
+                    <a class="font-wsans text-gray-500 hover:text-white transition duration-200 px-5" href="#">Services</a>
+                </li>
+                <li class="py-3">
+                    <a class="font-wsans text-gray-500 hover:text-white transition duration-200 px-5" href="#">Pricing</a>
+                </li>
+                <li class="py-3">
+                    <a class="font-wsans text-gray-500 hover:text-white transition duration-200 px-5" href="#">About</a>
+                </li>
+                <li class="py-3">
+                    <a class="font-wsans text-gray-500 hover:text-white transition duration-200 px-5" href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="p-6 my-auto">
+            <h1 class="font-wsans text-isaac-default text-2xl text-center">
+                Tu equipo, menos tiempo, mejores resultados.
+                <span class="font-wsans block text-3xl">Trabaja inteligente.</span>
+            </h1>
+        </div>
+        <div class="text-center mt-64">
+            <img class="hero-gear inline-block" src="./img/gear-rotated-l.png" alt="">
+            <img class="hero-gear inline-block" src="./img/gear-rotated-l.png" alt="">
+            <img class="hero-gear inline-block" src="./img/gear-rotated-l.png" alt="">
+            <img class="hero-gear inline-block" src="./img/gear-rotated-l.png" alt="">
+        </div>
     </div>
     <div>
-        <article>
-            <h2>Testing plugins</h2>
-            <button>Hello button</button>
+        <article class="p-16">
+            <h2>Trying new functionalities</h2>
+            <ul>
+                <li>Llegamos</li>
+                <li>Lo hacemos</li>
+                <li>Aprendes</li>
+                <li>Lo sigues haciendo</li>
+            </ul>
         </article>
     </div>
+
 </body>
 </html>

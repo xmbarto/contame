@@ -13,7 +13,7 @@ module.exports = {
     module:{
         rules:[
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.css$/,
                 use: [
                     'style-loader',
                     MiniCssExtractPlugin.loader,
@@ -21,14 +21,6 @@ module.exports = {
                     {
                         loader: 'postcss-loader'
                     },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sassOptions:{
-                                indentWidth: 4,
-                            }
-                        }
-                    }
                 ]
             },
             {
@@ -61,4 +53,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin()
     ], 
+    externals:{
+        jquery: 'jQuery'
+    }
 }
