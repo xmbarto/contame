@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-import MyApp from "./MyApp"
+import App from "./App"
 
 const mainElm = document.getElementById('root')
-ReactDOM.render(<MyApp />, mainElm)
+ReactDOM.render(<App />, mainElm)
