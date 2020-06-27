@@ -1,7 +1,7 @@
 import React from "react"
 import '../css/main.css'
 
-class App extends React.Component(){
+class MyApp extends React.Component{
     render(){
         return(
             <div>
@@ -11,8 +11,7 @@ class App extends React.Component(){
     }
 }
 
-
-export default App
+export default MyApp
 
 
 
