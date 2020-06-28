@@ -4,14 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.ct-head-title::after{
-    position: absolute;
-    top:0;
-    left: 0;
-    display: block;
-    border: 1px solid aqua;
-    width: 50px;
-    height: 1px;
-    background-color: aqua;
-}
